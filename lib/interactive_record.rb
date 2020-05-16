@@ -1,5 +1,5 @@
 class InteractiveRecord
-  
+
         def self.table_name
           self.to_s.downcase.pluralize
         end
@@ -12,7 +12,7 @@ class InteractiveRecord
           end
           column_names.compact
         end
-        
+
         def initialize(objects={})
           objects.each do |k, v|
             self.send("#{k}=", v)
@@ -57,4 +57,4 @@ class InteractiveRecord
             SQL
           DB[:conn].execute(sql, value_name);
         end
-end 
+end
